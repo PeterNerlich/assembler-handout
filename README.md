@@ -1,4 +1,4 @@
-# Ass.Prog. Overview
+# Assembler Overview
 
 ## Lowest level
 
@@ -34,7 +34,7 @@ The following describes which registers are modified or used for certain atomic 
 
 Pointers are addresses pointing to certain locations in memory. Since registers are the most elementar memory storage units for the CPU, addresses meant to be remembered after some other operation have to be stored in a register, too, so they are not lost during a calculation. Pointer registers cannot be used as data registers and can have unforseen consequences if modified blindly.
 
-![info graphic pointer register sizes](img/pointer-info.svg)
+![***[TODO]** info graphic pointer register sizes*](img/pointer-info.svg)
 
 - **`EIP`** - (extended) program counter
 	- aka instruction pointer, instruction address register, instruction counter, or just part of the instruction sequencer
@@ -52,9 +52,27 @@ Pointers are addresses pointing to certain locations in memory. Since registers 
 - **`EDI`** - (extended) destination index
 	- used by opcodes like `movsb` and `movsw` that efficiently copy many bytes of data from the location referenced in `ESI` to the one in `EDI`
 
+Segment registers store pointers to the start of different segments conntected to the currently running program.
+
+- **`CS`** - code segment
+	- holds base address of code segment
+	- the `IP` (instruction pointer) is the offset to the address stored here
+- **`SS`** - stack segment
+	- holds base address of stack segment
+	- the `SP` (stack pointer) is the offset to the address stored here
+- **`DS`** - data segment
+	- holds base address of data segment
+	- the `BX` (base register) holds the offset to the address stored here
+- **`ES`** - extra segment
+	- holds base address of extra segment
+- **`FS`**, **`GS`**
+	- hold addresses for further segments
+
 ***[TODO]** flag register*
 
 ### Operations
+
+***[TODO]***
 
 - mov
 - lea
@@ -83,6 +101,8 @@ Pointers are addresses pointing to certain locations in memory. Since registers 
 - stos
 - rep
 - loop
+- loope/loopz
+- loopne/loopnz
 
 - call
 - ret
