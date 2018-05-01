@@ -68,7 +68,38 @@ Segment registers store pointers to the start of different segments conntected t
 - **`FS`**, **`GS`**
 	- hold addresses for further segments
 
-***[TODO]** flag register*
+See section *Addresses* for further details.
+
+--------
+
+The **`PSW`** (program status word), aka *flag register*, does not represent a number or address, but each bit acts as a flag showing the presence (or absence) of certain properties while executing the last instruction. It is not directly accessible, but can be pushed on or popped from the stack (using `pushf` and `popf`).
+
+![***[TODO]** info graphic flags*](img/flags-info.svg)
+
+- **`C`** - carry
+- **`P`** - parity
+- **`A`** - auxiliary carry
+- **`Z`** - zero
+- **`O`** - overflow
+- **`S`** - sign
+
+- **`T`** - trap
+- **`I`** - interrupt
+- **`D`** - direction
+- **`IOPL`** - I/O priviledge level
+- **`NT`** - nested task flag
+- **`R`** - 
+- **`VM`** - 
+
+### Addresses
+
+***[TODO]** address handling (logic vs linear addresses)*
+
+***[TODO]** Protected Mode/Real Mode*
+
+![***[TODO]** info graphic segments flat model*](img/segments-flat-info.svg)
+
+![***[TODO]** info graphic segments multi model*](img/segments-multi-info.svg)
 
 ### Operations
 
